@@ -154,14 +154,40 @@ main {
   margin: 1rem 0;
 }
 
+/* * UPDATED: Added CSS Variables and removed background property here.
+ * The background is now handled by the ::-webkit-slider-runnable-track 
+ * using a linear-gradient for dynamic color filling.
+ */
 .seek-slider input {
   flex: 1;
   height: 6px;
   border-radius: 6px;
-  background: var(--gray-color);
   outline: none;
   cursor: pointer;
   -webkit-appearance: none;
+  
+  /* --- New custom properties for dynamic track coloring --- */
+  --seek-progress: 0%; /* Default, will be set by JavaScript */
+  --thumb-color: var(--main-color); /* The color of the filled part/thumb */
+  --track-color: var(--gray-color); /* The color of the unfilled part */
+  /* -------------------------------------------------------- */
+}
+
+/* * UPDATED: Custom styling for the track (bar) to implement 
+ * the dynamic gradient color change (Webkit browsers: Chrome, Safari). 
+ */
+.seek-slider input::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 6px;
+  cursor: pointer;
+  border-radius: 6px;
+  background: linear-gradient(
+    to right, 
+    var(--thumb-color) 0%, 
+    var(--thumb-color) var(--seek-progress), /* Filled portion */
+    var(--track-color) var(--seek-progress), /* Unfilled portion starts here */
+    var(--track-color) 100%
+  );
 }
 
 .seek-slider input::-webkit-slider-thumb {
@@ -171,6 +197,24 @@ main {
   border-radius: 50%;
   background: var(--main-color);
   cursor: pointer;
+  margin-top: -5px; /* Adjust vertical position to center on the 6px track */
+}
+
+/* * UPDATED: Custom styling for the track (bar) to implement 
+ * the dynamic gradient color change (Firefox). 
+ */
+.seek-slider input::-moz-range-track {
+  width: 100%;
+  height: 6px;
+  cursor: pointer;
+  border-radius: 6px;
+  background: linear-gradient(
+    to right, 
+    var(--thumb-color) 0%, 
+    var(--thumb-color) var(--seek-progress), /* Filled portion */
+    var(--track-color) var(--seek-progress), /* Unfilled portion starts here */
+    var(--track-color) 100%
+  );
 }
 
 .seek-slider input::-moz-range-thumb {

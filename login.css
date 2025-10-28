@@ -29,7 +29,7 @@ body {
     z-index: -1;
 }
 
-.login-container {
+.container {
     display: flex;
     width: 800px;
     height: 500px;
@@ -37,6 +37,11 @@ body {
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.forms-container {
+    display: flex;
+    width: 100%;
 }
 
 .logo {
@@ -49,6 +54,7 @@ body {
     align-items: center;
     padding: 40px;
     text-align: center;
+    transition: all 0.5s ease;
 }
 
 .logo h1 {
@@ -62,12 +68,38 @@ body {
     opacity: 0.9;
 }
 
-.form-container {
+.form-wrapper {
     flex: 1;
+    position: relative;
+    overflow: hidden;
+}
+
+.form-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     padding: 40px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    transition: all 0.5s ease;
+    opacity: 0;
+    transform: translateX(100%);
+}
+
+.form-container.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.form-container.signup-form {
+    transform: translateX(-100%);
+}
+
+.form-container.signup-form.active {
+    transform: translateX(0);
 }
 
 .form-container h2 {
@@ -133,42 +165,24 @@ button:hover {
     box-shadow: 0 5px 15px rgba(106, 17, 203, 0.4);
 }
 
-.signup {
+.toggle-form {
     text-align: center;
     margin-top: 20px;
     color: #666;
 }
 
-.signup a {
+.toggle-form a {
     color: #6a11cb;
     text-decoration: none;
     font-weight: 500;
 }
 
-.signup a:hover {
+.toggle-form a:hover {
     text-decoration: underline;
 }
 
-.links {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 20px;
-}
-
-.links a {
-    color: #666;
-    text-decoration: none;
-    font-size: 14px;
-    transition: color 0.3s;
-}
-
-.links a:hover {
-    color: #6a11cb;
-}
-
 @media (max-width: 850px) {
-    .login-container {
+    .container {
         flex-direction: column;
         width: 90%;
         height: auto;
@@ -180,5 +194,13 @@ button:hover {
     
     .form-container {
         padding: 30px 20px;
+    }
+    
+    .forms-container {
+        flex-direction: column;
+    }
+    
+    .logo {
+        border-radius: 20px 20px 0 0;
     }
 }

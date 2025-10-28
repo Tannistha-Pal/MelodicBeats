@@ -8,37 +8,58 @@
 </head>
 <body>
     <div class="background-overlay"></div>
-    <div class="login-container">
-        <div class="logo">
-            <h1>Melodic Beats</h1>
-            <p>Your rhythm, your beats</p>
-        </div>
-        <div class="form-container">
-            <h2>Welcome Back</h2>
-            <form id="login-form">
-                <div class="input-group">
-                    <input type="text" id="username" name="username" required>
-                    <label for="username">Username</label>
+    <div class="container">
+        <div class="forms-container">
+            <div class="logo">
+                <h1>Melodic Beats</h1>
+                <p>Your rhythm, your beats</p>
+            </div>
+            
+            <div class="form-wrapper">
+                <!-- Login Form -->
+                <div class="form-container login-form active">
+                    <h2>Welcome Back</h2>
+                    <form id="login-form">
+                        <div class="input-group">
+                            <input type="text" id="login-username" name="username" required>
+                            <label for="login-username">Username</label>
+                        </div>
+                        <div class="input-group">
+                            <input type="password" id="login-password" name="password" required>
+                            <label for="login-password">Password</label>
+                        </div>
+                        <button type="submit">Login</button>
+                    </form>
+                    <p class="toggle-form">Don't have an account? <a href="#" id="show-signup">Sign up</a></p>
                 </div>
-                <div class="input-group">
-                    <input type="password" id="password" name="password" required>
-                    <label for="password">Password</label>
+                
+                <!-- Signup Form -->
+                <div class="form-container signup-form">
+                    <h2>Create Account</h2>
+                    <form id="signup-form">
+                        <div class="input-group">
+                            <input type="text" id="signup-username" name="username" required>
+                            <label for="signup-username">Username</label>
+                        </div>
+                        <div class="input-group">
+                            <input type="email" id="email" name="email" required>
+                            <label for="email">Email</label>
+                        </div>
+                        <div class="input-group">
+                            <input type="password" id="signup-password" name="password" required>
+                            <label for="signup-password">Password</label>
+                        </div>
+                        <div class="input-group">
+                            <input type="password" id="confirm-password" name="confirm-password" required>
+                            <label for="confirm-password">Confirm Password</label>
+                        </div>
+                        <button type="submit">Sign Up</button>
+                    </form>
+                    <p class="toggle-form">Already have an account? <a href="#" id="show-login">Login</a></p>
                 </div>
-                <button type="submit">Login</button>
-            </form>
-            <p class="signup">Don't have an account? <a href="#">Sign up</a></p>
-            <div class="links">
-                <a href="about.html">About us</a>
-                <a href="contact.html">Contact</a>
             </div>
         </div>
     </div>
-    <script>
-        document.getElementById('login-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            // Simple validation - in a real app, you'd authenticate with a server
-            window.location.href = 'home.html';
-        });
-    </script>
+    <script src="login.js"></script>
 </body>
 </html>
