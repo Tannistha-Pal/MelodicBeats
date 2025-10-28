@@ -1,5 +1,5 @@
 # 🎵 Melodic Beats - Front-End Web Project
-This repository contains our front-end project *Melodic Beats. It is our first-year mini project, and we have uploaded it here as part of the subject **Source Code Management (SCM)*.
+This repository contains our front-end project *Melodic Beats. It is our first-sem mini Front End project, and we have uploaded it here as part of the subject **Source Code Management (SCM)*.
 ## 📌 Project Overview
 *Melodic Beats* is a static website designed to help users explore and enjoy music through a simple and elegant interface. It includes multiple pages such as:
 - Homepage  
