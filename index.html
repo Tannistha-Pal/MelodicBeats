@@ -3,27 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="log.css">
-    <title>Login Page</title>
+    <link rel="stylesheet" href="login.css">
+    <title>Melodic Beats | Login</title>
 </head>
-<body style="background-image: url('https://demishia.com/wp-content/uploads/2018/04/admin-login-background-images-8.jpg');">
-  <div> <div class="login-container">
-        <h2>Login</h2>
-        <form>
-            <div class="input-group">
-                <label for="username">Username</label>
-                <input type="text" id="username" name="username" required>
+<body>
+    <div class="background-overlay"></div>
+    <div class="login-container">
+        <div class="logo">
+            <h1>Melodic Beats</h1>
+            <p>Your rhythm, your beats</p>
+        </div>
+        <div class="form-container">
+            <h2>Welcome Back</h2>
+            <form id="login-form">
+                <div class="input-group">
+                    <input type="text" id="username" name="username" required>
+                    <label for="username">Username</label>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="password" name="password" required>
+                    <label for="password">Password</label>
+                </div>
+                <button type="submit">Login</button>
+            </form>
+            <p class="signup">Don't have an account? <a href="#">Sign up</a></p>
+            <div class="links">
+                <a href="about.html">About us</a>
+                <a href="contact.html">Contact</a>
             </div>
-            <div class="input-group">
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password" required>
-            </div>
-            <button type="submit" href="about.html">Login</button>
-        </form>
-        <p class="signup">Don't have an account? <a href="#">Sign up</a></p>
+        </div>
     </div>
-    <a href="about.html">
-    <button>About us</button>
-    </a></div>
+    <script>
+        document.getElementById('login-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Simple validation - in a real app, you'd authenticate with a server
+            window.location.href = 'home.html';
+        });
+    </script>
 </body>
 </html>

@@ -3,26 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us</title>
-    <link rel="stylesheet" href="contactus.css">
+    <title>Contact Us | Melodic Beats</title>
+    <link rel="stylesheet" href="contact.css">
 </head>
 <body>
-    <div class="contact-container">
-        <h1>Recommend your Favourite Song</h1>
-        <p>' Recommend your favourite songs. Let's build something great together.'</p>
+    <div class="container">
+        <header>
+            <h1>Melodic Beats</h1>
+            <nav>
+                <a href="home.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="index.html">Login</a>
+            </nav>
+        </header>
 
-        <form action="#" method="POST" class="contact-form">
-            <label for="name">Full Name</label>
-            <input type="text" id="name" name="name" required>
+        <main>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h2>Get in Touch</h2>
+                    <p>Have questions, feedback, or song recommendations? We'd love to hear from you!</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <h3>Email</h3>
+                            <p>hello@melodicbeats.com</p>
+                        </div>
+                        <div class="contact-item">
+                            <h3>Phone</h3>
+                            <p>+1 (555) 123-4567</p>
+                        </div>
+                        <div class="contact-item">
+                            <h3>Address</h3>
+                            <p>123 Music Street, Harmony City, HC 12345</p>
+                        </div>
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="#" class="social-link">Facebook</a>
+                        <a href="#" class="social-link">Twitter</a>
+                        <a href="#" class="social-link">Instagram</a>
+                        <a href="#" class="social-link">YouTube</a>
+                    </div>
+                </div>
+                
+                <div class="contact-form-container">
+                    <h2>Recommend Your Favourite Song</h2>
+                    <p class="subtitle">Share your favorite tracks with us. Let's build something great together.</p>
 
-            <label for="email">Email Address</label>
-            <input type="email" id="email" name="email" required>
+                    <form action="#" method="POST" class="contact-form">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="song">Song Recommendation</label>
+                            <input type="text" id="song" name="song" placeholder="Artist - Song Title">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
 
-            <label for="message">Message</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </main>
 
-            <button type="submit" class="submit-btn">Send Message</button>
-        </form>
+        <footer>
+            <p>&copy; 2024 Melodic Beats. All rights reserved.</p>
+        </footer>
     </div>
 </body>
 </html>
